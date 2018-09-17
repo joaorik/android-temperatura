@@ -1,0 +1,11 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="android:Theme.Material.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <string name="celsius_hint">"Celsius"</string>
+    <string name="fahrenheit_hint">"Fahrenheit"</string>
+
+</resources>
