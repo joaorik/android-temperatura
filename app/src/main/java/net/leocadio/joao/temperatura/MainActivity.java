@@ -85,29 +85,10 @@ public class MainActivity extends Activity {
 
     }
 
-    // rounds numbers to x decimal places - depending on user request
-    public Double stripDecimal(Double temp){
+    public Double stripDecimal(Double temp) {
 
-        Double strippedTemp;
-        switch(decimalPlaces)
-        {
-            case "1":
-                strippedTemp = (double)Math.round(temp * 10d) / 10d;
-                break;
-            case "2":
-                strippedTemp = (double)Math.round(temp * 100d) / 100d;
-                break;
-            case "3":
-                strippedTemp = (double)Math.round(temp * 1000d) / 1000d;
-                break;
-            case "4":
-                strippedTemp = (double)Math.round(temp * 10000d) / 10000d;
-                break;
-            default:
-                strippedTemp = temp;
-                break;
-        }
-        return strippedTemp;
+        String valor = String.format("%.2f", temp);
+        return Double.parseDouble(valor);
     }
 
 }
