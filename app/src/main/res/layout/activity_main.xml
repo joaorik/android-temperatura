@@ -9,77 +9,68 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity">
-
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteY="81dp">
 
     <!-- Celcius -->
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_password"
-        android:layout_width="186dp"
+    <EditText
+        android:id="@+id/celciusText"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="83dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <EditText
-            android:id="@+id/celciusText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_column="0"
-            android:layout_row="0"
-            android:ems="7"
-            android:hint="@string/celsius_hint"
-            android:imeOptions="actionDone|flagNoExtractUi"
-            android:inputType="numberDecimal|numberSigned"
-            android:maxLength="10" />
-    </android.support.design.widget.TextInputLayout>
+        android:layout_column="0"
+        android:layout_marginEnd="7dp"
+        android:layout_marginTop="20dp"
+        android:layout_row="0"
+        android:ems="7"
+        android:hint="@string/celsius_hint"
+        android:imeOptions="actionDone|flagNoExtractUi"
+        android:inputType="numberDecimal|numberSigned"
+        android:maxLength="10"
+        app:layout_constraintEnd_toStartOf="@+id/celciusSymbol"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/celciusSymbol"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:layout_marginEnd="13dp"
+        android:layout_marginEnd="16dp"
         android:clickable="false"
         android:linksClickable="false"
         android:text="°C"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        app:layout_constraintBottom_toBottomOf="@+id/input_layout_password"
-        app:layout_constraintEnd_toEndOf="@+id/input_layout_password" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/celciusText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/celciusText" />
 
     <!-- Fahrenheit -->
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_password1"
-        android:layout_width="0dp"
+    <EditText
+        android:id="@+id/farText"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/input_layout_password"
-        app:layout_constraintStart_toStartOf="@+id/input_layout_password"
-        app:layout_constraintTop_toBottomOf="@+id/input_layout_password">
-
-        <EditText
-            android:id="@+id/farText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="7"
-            android:hint="@string/fahrenheit_hint"
-            android:imeOptions="actionDone|flagNoExtractUi"
-            android:inputType="numberDecimal|numberSigned"
-            android:maxLength="10" />
-
-    </android.support.design.widget.TextInputLayout>
+        android:layout_marginEnd="6dp"
+        android:layout_marginTop="8dp"
+        android:ems="7"
+        android:hint="@string/fahrenheit_hint"
+        android:imeOptions="actionDone|flagNoExtractUi"
+        android:inputType="numberDecimal|numberSigned"
+        android:maxLength="10"
+        app:layout_constraintEnd_toStartOf="@+id/farSymbol"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/celciusText" />
 
     <TextView
         android:id="@+id/farSymbol"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:layout_marginEnd="15dp"
+        android:layout_marginEnd="18dp"
         android:text="°F"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        app:layout_constraintBottom_toBottomOf="@+id/input_layout_password1"
-        app:layout_constraintEnd_toEndOf="@+id/input_layout_password1" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/farText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/farText" />
 
 
 </android.support.constraint.ConstraintLayout>

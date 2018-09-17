@@ -1,7 +1,9 @@
 package net.leocadio.joao.temperatura;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
@@ -26,18 +28,17 @@ public class MainActivity extends Activity {
         celsiusValue.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View arg0, boolean hasFocus) {
-            selectedEditTxt = Temperature.CELCIUS;
-            celsiusValue.setFilters(new InputFilter[]{new InputFilterMinMax(-273.15, Double.MAX_VALUE, selectedEditTxt, MainActivity.this), new InputFilter.LengthFilter(10)});
+                selectedEditTxt = Temperature.CELCIUS;
+                celsiusValue.setFilters(new InputFilter[]{new InputFilterMinMax(-273.15, Double.MAX_VALUE, selectedEditTxt, MainActivity.this), new InputFilter.LengthFilter(10)});
             }
 
         });
 
         far.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-            selectedEditTxt = Temperature.FAHRENHEIT;
-            far.setFilters(new InputFilter[]{new InputFilterMinMax(-459.67, Double.MAX_VALUE, selectedEditTxt, MainActivity.this), new InputFilter.LengthFilter(10)});
+                selectedEditTxt = Temperature.FAHRENHEIT;
+                far.setFilters(new InputFilter[]{new InputFilterMinMax(-459.67, Double.MAX_VALUE, selectedEditTxt, MainActivity.this), new InputFilter.LengthFilter(10)});
             }
         });
 
@@ -50,7 +51,7 @@ public class MainActivity extends Activity {
                     double temp = Double.parseDouble(tempValue);
                     // fahrenheit
                     double outputFar = (temp * 1.8) + 32;
-                    far.setText(String.valueOf(outputFar));
+                    far.setText(String.valueOf(stripDecimal(outputFar)));
 
                 } else if (selectedEditTxt == Temperature.CELCIUS) {
                     far.setText("");
@@ -73,7 +74,7 @@ public class MainActivity extends Activity {
 
                     //Celcius
                     double outputCelcius = (temp - 32) / 1.8;
-                    celsiusValue.setText(String.valueOf((outputCelcius)));
+                    celsiusValue.setText(String.valueOf((stripDecimal(outputCelcius))));
                 } else if (selectedEditTxt == Temperature.FAHRENHEIT) {
                     celsiusValue.setText("");
                 }
@@ -85,4 +86,30 @@ public class MainActivity extends Activity {
         });
 
     }
+
+    // rounds numbers to x decimal places - depending on user request
+    public Double stripDecimal(Double temp){
+
+        Double strippedTemp;
+        switch(decimalPlaces)
+        {
+            case "1":
+                strippedTemp = (double)Math.round(temp * 10d) / 10d;
+                break;
+            case "2":
+                strippedTemp = (double)Math.round(temp * 100d) / 100d;
+                break;
+            case "3":
+                strippedTemp = (double)Math.round(temp * 1000d) / 1000d;
+                break;
+            case "4":
+                strippedTemp = (double)Math.round(temp * 10000d) / 10000d;
+                break;
+            default:
+                strippedTemp = temp;
+                break;
+        }
+        return strippedTemp;
+    }
+
 }
