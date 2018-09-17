@@ -43,6 +43,7 @@
         app:layout_constraintBaseline_toBaselineOf="@+id/celciusText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/celciusText" />
+    <!-- End Celsius -->
 
     <!-- Fahrenheit -->
     <EditText
@@ -71,6 +72,6 @@
         app:layout_constraintBaseline_toBaselineOf="@+id/farText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/farText" />
-
+    <!-- End Fahrenheit -->
 
 </android.support.constraint.ConstraintLayout>
