@@ -15,8 +15,6 @@ public class MainActivity extends Activity {
     private Temperature selectedEditTxt;
     private String decimalPlaces = null;
 
-    private final String accentColour = "#A5D6A7";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -26,17 +26,18 @@ class InputFilterMinMax implements InputFilter {
             // Add the new string in
             newVal = newVal.substring(0, dstart) + source.toString() + newVal.substring(dstart, newVal.length());
 
-            if (newVal.equals("-"))
+            if (newVal.equals("-")) {
                 return null;
-
+			}
 
             double input = Double.parseDouble(newVal);
-            if (isInRange(min, max, input))
+			
+            if (isInRange(min, max, input)) {
                 return null;
-            else if (selectedEditTxt == Temperature.CELCIUS) {
-                Toast.makeText(context, "Absolute zero is = -273.15°C", Toast.LENGTH_LONG).show();
+            } else if (selectedEditTxt == Temperature.CELCIUS) {
+                Toast.makeText(context, "Zero absoluto é = -273.15°C", Toast.LENGTH_LONG).show();
             } else if (selectedEditTxt == Temperature.FAHRENHEIT) {
-                Toast.makeText(context, "Absolute zero is = -459.67°F", Toast.LENGTH_LONG).show();
+                Toast.makeText(context, "Zero absoluto é = -459.67°F", Toast.LENGTH_LONG).show();
             }
         } catch (NumberFormatException e) {
             e.printStackTrace();
