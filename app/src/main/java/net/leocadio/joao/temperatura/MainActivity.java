@@ -13,7 +13,6 @@ import android.widget.EditText;
 public class MainActivity extends Activity {
 
     private Temperature selectedEditTxt;
-    private String decimalPlaces = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
