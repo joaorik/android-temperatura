@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -17,9 +17,10 @@
         android:id="@+id/celciusText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:layout_column="0"
-        android:layout_marginEnd="7dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="27dp"
         android:layout_row="0"
         android:ems="7"
         android:hint="@string/celsius_hint"
@@ -35,7 +36,8 @@
         android:id="@+id/celciusSymbol"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
+        android:layout_alignBaseline="@+id/celciusText"
+        android:layout_toEndOf="@+id/celciusText"
         android:clickable="false"
         android:linksClickable="false"
         android:text="°C"
@@ -50,8 +52,9 @@
         android:id="@+id/farText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="6dp"
-        android:layout_marginTop="8dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="112dp"
         android:ems="7"
         android:hint="@string/fahrenheit_hint"
         android:imeOptions="actionDone|flagNoExtractUi"
@@ -66,7 +69,8 @@
         android:id="@+id/farSymbol"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="18dp"
+        android:layout_alignBaseline="@+id/farText"
+        android:layout_toEndOf="@+id/celciusText"
         android:text="°F"
         android:textAppearance="?android:attr/textAppearanceMedium"
         app:layout_constraintBaseline_toBaselineOf="@+id/farText"
@@ -74,4 +78,16 @@
         app:layout_constraintStart_toEndOf="@+id/farText" />
     <!-- End Fahrenheit -->
 
-</android.support.constraint.ConstraintLayout>
+    <net.leocadio.joao.temperatura.CustomProgressBar
+        android:id="@+id/custom_pb"
+        android:layout_width="335dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="200dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="220dp" />
+
+</RelativeLayout>
