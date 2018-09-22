@@ -9,7 +9,7 @@ import android.text.TextPaint;
 import android.util.AttributeSet;
 import android.view.View;
 
-class CustomProgressBar extends View {
+class CustomCelsius extends View {
 
     private Paint progressPaint;
     private Paint fillPaint;
@@ -26,17 +26,17 @@ class CustomProgressBar extends View {
     private int progress;
     private float textSize;
 
-    public CustomProgressBar(Context context) {
+    public CustomCelsius(Context context) {
         super(context);
         init(context, null);
     }
 
-    public CustomProgressBar(Context context, AttributeSet attrs) {
+    public CustomCelsius(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs);
     }
 
-    public CustomProgressBar(Context context, AttributeSet attrs, int defStyleAttr) {
+    public CustomCelsius(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context, attrs);
     }
@@ -138,5 +138,4 @@ class CustomProgressBar extends View {
         this.progress = progress;
         invalidate();
     }
-
 }

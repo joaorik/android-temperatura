@@ -13,7 +13,8 @@ import android.widget.EditText;
 public class MainActivity extends Activity {
 
     private Temperature selectedEditTxt;
-    CustomProgressBar customProgressBar;
+    CustomCelsius customCelsius;
+    CustomFar customFar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +24,9 @@ public class MainActivity extends Activity {
         final EditText celsiusValue = (EditText) findViewById(R.id.celciusText);
         final EditText far = (EditText) findViewById(R.id.farText);
 
-        customProgressBar = (CustomProgressBar) findViewById(R.id.custom_pb);
+        customCelsius = (CustomCelsius) findViewById(R.id.customCelsius);
+        customFar = (CustomFar) findViewById(R.id.customFar);
+
 
         celsiusValue.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
@@ -53,7 +56,8 @@ public class MainActivity extends Activity {
                     double outputFar = (temp * 1.8) + 32;
                     far.setText(String.valueOf(stripDecimal(outputFar)));
 
-                    customProgressBar.setProgress(10);
+                    int farInt = (int) Math.round(outputFar);
+                    customFar.setProgress(farInt);
 
                 } else if (selectedEditTxt == Temperature.CELCIUS) {
                     far.setText("");
@@ -77,6 +81,10 @@ public class MainActivity extends Activity {
                     //Celcius
                     double outputCelcius = (temp - 32) / 1.8;
                     celsiusValue.setText(String.valueOf((stripDecimal(outputCelcius))));
+
+                    int celInt = (int) Math.round(outputCelcius);
+                    customCelsius.setProgress(celInt);
+
                 } else if (selectedEditTxt == Temperature.FAHRENHEIT) {
                     celsiusValue.setText("");
                 }

@@ -36,6 +36,22 @@
         android:id="@+id/celciusSymbol"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/customCelsius"
+        android:layout_centerHorizontal="true"
+        android:clickable="false"
+        android:linksClickable="false"
+        android:text="Celsius"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        app:layout_constraintBaseline_toBaselineOf="@+id/celciusText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/celciusText" />
+    <!-- End Celsius -->
+
+    <!-- Fahrenheit -->
+    <TextView
+        android:id="@+id/celciusSymbol2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/celciusText"
         android:layout_toEndOf="@+id/celciusText"
         android:clickable="false"
@@ -45,9 +61,7 @@
         app:layout_constraintBaseline_toBaselineOf="@+id/celciusText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/celciusText" />
-    <!-- End Celsius -->
 
-    <!-- Fahrenheit -->
     <EditText
         android:id="@+id/farText"
         android:layout_width="wrap_content"
@@ -78,16 +92,44 @@
         app:layout_constraintStart_toEndOf="@+id/farText" />
     <!-- End Fahrenheit -->
 
-    <net.leocadio.joao.temperatura.CustomProgressBar
-        android:id="@+id/custom_pb"
-        android:layout_width="335dp"
-        android:layout_height="50dp"
+    <TextView
+        android:id="@+id/farSymbol2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/customFar"
+        android:layout_centerHorizontal="true"
+        android:text="Fahrenheit"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        app:layout_constraintBaseline_toBaselineOf="@+id/farText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/farText" />
+
+    <!-- Celcius -->
+    <net.leocadio.joao.temperatura.CustomCelsius
+        android:id="@+id/customCelsius"
+        android:layout_width="wrap_content"
+        android:layout_height="78dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="200dp"
+        android:layout_marginBottom="182dp"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
         tools:layout_editor_absoluteX="4dp"
         tools:layout_editor_absoluteY="220dp" />
+    <!-- End Celcius -->
+
+    <!-- Fahrenheit -->
+    <net.leocadio.joao.temperatura.CustomFar
+        android:id="@+id/customFar"
+        android:layout_width="wrap_content"
+        android:layout_height="78dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="37dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="220dp" />
+    <!-- End Fahrenheit -->
 
 </RelativeLayout>
