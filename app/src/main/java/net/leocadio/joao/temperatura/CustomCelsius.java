@@ -53,7 +53,7 @@ class CustomCelsius extends View {
 
         fillPaint = new Paint();
         fillPaint.setStyle(Paint.Style.FILL);
-        fillPaint.setColor(getResources().getColor(R.color.pb_fill_color));
+        fillPaint.setColor(getResources().getColor(R.color.frio));
     }
 
     @Override
@@ -65,10 +65,17 @@ class CustomCelsius extends View {
 
         // Draw the half at the end
         // if the progess > 0 , fill the small half cicle at the left
-        if (progress > 0) {
+        if (progress > 0 && progress <= 19) {
             progressPaint.setStyle(Paint.Style.FILL);
-            progressPaint.setColor(getResources().getColor(R.color.pb_fill_color));
+            progressPaint.setColor(getResources().getColor(R.color.frio));
+        } else if (progress >= 20 && progress <= 32) {
+            progressPaint.setStyle(Paint.Style.FILL);
+            progressPaint.setColor(getResources().getColor(R.color.morno));
+        } else if (progress >= 33) {
+            progressPaint.setStyle(Paint.Style.FILL);
+            progressPaint.setColor(getResources().getColor(R.color.quente));
         }
+
         RectF segment = new RectF();
         Path path = new Path();
         segment.set(getPaddingLeft(), getHeight() / 2 - pxBarHeight, getPaddingLeft() + 2 * pxBarHeight, getHeight() / 2 + pxBarHeight);
@@ -127,7 +134,7 @@ class CustomCelsius extends View {
         // Draw the text display progress
         TextPaint textPaint = new TextPaint();
         textPaint.setTextSize(textSize);
-        textPaint.setColor(getResources().getColor(R.color.text_color));
+        textPaint.setColor(getResources().getColor(R.color.colorAccent));
         textPaint.setTextAlign(Paint.Align.CENTER);
         float textHeight = textPaint.descent() - textPaint.ascent();
         float textOffset = (textHeight / 2) - textPaint.descent();

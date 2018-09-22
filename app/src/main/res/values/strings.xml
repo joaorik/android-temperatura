@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Temperatura</string>
+    <string name="c_">°C</string>
+    <string name="f_">°F</string>
 </resources>

@@ -3,6 +3,9 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="pb_fill_color">#7bc043</color>
     <color name="text_color">#575757</color>
+
+    <color name="frio">#3366FF</color>
+    <color name="morno">#FF6600</color>
+    <color name="quente">#CC0000</color>
 </resources>
